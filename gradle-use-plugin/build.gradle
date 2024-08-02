@@ -1,0 +1,24 @@
+buildscript {
+    dependencies {
+        classpath("com.thrillpool:the-plugin")
+    }
+}
+
+plugins {
+    id 'groovy'
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'com.thrillpool.plugin'
+
+// this is the main thing to work out, can we make plugin have the logic for this bit
+// it's only needed in the composite context
+tasks.thrillTask.dependsOn gradle.includedBuild('gradle-plugin-with-deps').task(':impl-thing:jar')
+
+
+group = "com.thrillpool"
+

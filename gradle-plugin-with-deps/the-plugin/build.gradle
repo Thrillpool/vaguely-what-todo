@@ -1,0 +1,6 @@
+project(":the-plugin") {
+    dependencies {
+        implementation gradleApi()
+        implementation project(":interface-thing")
+    }
+}

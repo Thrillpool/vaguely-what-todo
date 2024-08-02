@@ -1,0 +1,5 @@
+project(":interface-thing") {
+    dependencies {
+        implementation 'org.apache.groovy:groovy:4.0.22'
+    }
+}

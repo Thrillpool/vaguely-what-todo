@@ -1,0 +1,5 @@
+rootProject.name = 'com.thrillpool'
+
+include 'the-plugin'
+include 'impl-thing'
+include 'interface-thing'

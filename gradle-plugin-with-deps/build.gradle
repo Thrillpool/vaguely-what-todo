@@ -1,0 +1,29 @@
+plugins {
+    id 'groovy'
+    id 'java'
+    id 'maven-publish'
+}
+
+group = "com.thrillpool"
+
+
+subprojects { sub ->
+    apply plugin: 'groovy'
+    apply plugin: 'maven-publish'
+
+    repositories {
+        mavenCentral()
+    }
+
+    publishing {
+        publications {
+            maven(MavenPublication) {
+                artifactId = sub.name
+                version = '1.0.1'
+                from components.java
+            }
+        }
+    }
+
+
+}
